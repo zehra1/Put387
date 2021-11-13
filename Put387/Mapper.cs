@@ -32,7 +32,7 @@ namespace Put387
             CreateMap<Database.TipVoznje, Model.Models.TipVoznje>().ReverseMap();
 
             CreateMap<Database.Voznja, Model.Models.Voznja>().ReverseMap();
-            CreateMap<Database.Voznja, VoznjaUpsertRequest>().ReverseMap();
+            CreateMap<Database.Voznja, VoznjaUpsertRequest>().ReverseMap().ForMember(dest => dest.DatumVrijemePolaska, opt => opt.MapFrom(src => DateTime.Parse(src.DatumVrijemePolaska)));
 
             CreateMap<Database.VoznjaDojam, Model.Models.VoznjaDojam>().ReverseMap();
             CreateMap<Database.VoznjaDojam, VoznjeDojamInsertRequest>().ReverseMap();

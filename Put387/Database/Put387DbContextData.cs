@@ -173,28 +173,6 @@ namespace Put387.Database
             modelBuilder.Entity<Korisnik>().HasData(putnik2);
 
 
-
-            Korisnik bot = new Korisnik
-            {
-                Id = 6,
-                Ime = "bot",
-                Prezime = "bot",
-                Email = "bot@put387.com",
-                Telefon = "+38762101010",
-                Aktivan = true,
-                Username = "Bot",
-                ulogaId = 1,
-                gradId = 3,
-                Slika = File.ReadAllBytes("img/defaultProfile.png"),
-                DatumRegistracije = DateTime.Now
-            };
-
-            bot.PasswordSalt = Helper.HashGenerator.GenerateSalt();
-            bot.PasswordHash = Helper.HashGenerator.GenerateHash(bot.PasswordSalt, "bot");
-
-            modelBuilder.Entity<Korisnik>().HasData(bot);
-
-
             modelBuilder.Entity<Vozilo>().HasData(new List<Vozilo>
                 {
                     new Vozilo
@@ -539,16 +517,7 @@ namespace Put387.Database
                     },
                 }
 );
-            Poruka porukaBot = new Poruka
-            {
-                Id = 1,
-                DatumVrijemeKreiranja = DateTime.Now,
-                korisnikId = 6,
-                voznjaId = 1,
-                Sadrzaj = "Dobrodošli na Put387."
-            };
-
-            modelBuilder.Entity<Poruka>().HasData(porukaBot);
+           
 
             modelBuilder.Entity<VoznjaDojam>().HasData(new List<VoznjaDojam>
                 {
@@ -577,7 +546,7 @@ namespace Put387.Database
                         Ocjena = 4,
                         korisnikId = 4,
                         DatumKreiranja = DateTime.Now,
-                        Komentar = "Sve super ali..."
+                        Komentar = "Sve super!"
                     },
                     new VoznjaDojam
                     {

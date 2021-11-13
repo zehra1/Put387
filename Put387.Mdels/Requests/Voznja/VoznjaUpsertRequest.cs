@@ -9,7 +9,7 @@ namespace Put387.Model.Requests.Voznja
         public int odredisteId { get; set; }
         public int vozacId { get; set; }
         public int tipVoznjeId { get; set; }
-        public DateTime DatumVrijemePolaska { get; set; }
+        public string DatumVrijemePolaska { get; set; }
         public int BrojMjesta { get; set; }
         public int BrojSlobodnihMjesta { get; set; }
         public string Napomena { get; set; }

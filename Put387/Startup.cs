@@ -77,10 +77,12 @@ namespace Put387
             services.AddDbContext<Put387DbContext>(c => c.UseSqlServer(Configuration.GetConnectionString("Put387ConnectionString")));
             services.AddAuthentication("BasicAuthentication")
                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
-            services.AddScoped<ICRUDRepository<Model.Models.Detalji, DetaljiSearchRequest, DetaljiUpsertRequest,DetaljiUpsertRequest>, DetaljiRepository>();
+            services.AddScoped<ICRUDRepository<Model.Models.Detalji, DetaljiSearchRequest, DetaljiUpsertRequest, DetaljiUpsertRequest>, DetaljiRepository>();
             services.AddScoped<ICRUDRepository<Model.Models.Medalja, MedaljaSearchRequest, MedaljaInsertRequest, MedaljaInsertRequest>, MedaljaRepository>();
+            services.AddScoped<ICRUDRepository<Model.Models.MedaljaKorisnik, MedaljaKorisnikSearchRequest, MedaljaKorisnikUpsertRequest, MedaljaKorisnikUpsertRequest>, MedaljaKorisnikRepository>();
             services.AddScoped<ICRUDRepository<Model.Models.Voznja, VoznjaSearchRequest, VoznjaUpsertRequest, VoznjaUpsertRequest>, VoznjaRepository>();
             services.AddScoped<ICRUDRepository<Model.Models.VoznjaDojam, VoznjaDojamSearchRequest, VoznjeDojamInsertRequest, VoznjeDojamInsertRequest>, VoznjaDojamRepository>();
+            services.AddScoped<ICRUDRepository<Model.Models.VoziloDetalji, Model.Requests.VoziloDetalji.VoziloDetaljiSearchRequest, Model.Requests.VoziloDetalji.VoziloDetaljiUpsertRequest, Model.Requests.VoziloDetalji.VoziloDetaljiUpsertRequest>, VoziloDetaljiRepository>();
             services.AddScoped<ICRUDRepository<Model.Models.VoznjaKorisnici, VoznjaKorisniciSearchRequest, VoznjaKorisniciUpsertRequest, VoznjaKorisniciUpsertRequest>, VoznjaKorisniciRepository>();
             services.AddScoped<ICRUDRepository<Model.Models.Kategorija, KategorijaSearchRequest, KategorijaUpsertRequest, KategorijaUpsertRequest>, KategorijaRepository>();
             services.AddScoped<ICRUDRepository<Model.Models.Vozilo, VoziloSearchRequest, VoziloUpsertRequest, VoziloUpsertRequest>, VoziloRepository>();
@@ -89,6 +91,7 @@ namespace Put387
             services.AddScoped<IKorisnik, KorisnikRepository>();
             services.AddScoped<IRecommendRepository, RecommendRepository>();
             services.AddScoped<IRepository<Model.Models.Grad, Model.Requests.Grad.GradSearchRequest>, GradRepository>();
+            services.AddScoped<IRepository<Model.Models.Mjesto, Model.Requests.Mjesto.MjestoSearchRequest>, MjestoRepository>();
             services.AddScoped<IRepository<Model.Models.Uloga, Model.Requests.Uloga.UlogaSearchRequest>, UlogaRepository>();
             services.AddScoped<IRepository<Model.Models.TipVoznje, Model.Requests.TipVoznje.TipVoznjeSearchRrequest>, TipVoznjeRepository>();
         }
