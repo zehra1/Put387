@@ -100,7 +100,7 @@ namespace Put387.Database
                 Email = "mario@put387.com",
                 Telefon = "+38762101010",
                 Aktivan = true,
-                Username = "vozac123",
+                Username = "vozac_mario",
                 ulogaId = 2,
                 gradId = 2,
                 Slika = File.ReadAllBytes("img/defaultProfile.png"),
@@ -108,7 +108,7 @@ namespace Put387.Database
             };
 
             vozac.PasswordSalt = Helper.HashGenerator.GenerateSalt();
-            vozac.PasswordHash = Helper.HashGenerator.GenerateHash(vozac.PasswordSalt, "vozac");
+            vozac.PasswordHash = Helper.HashGenerator.GenerateHash(vozac.PasswordSalt, "vozacMario");
 
             modelBuilder.Entity<Korisnik>().HasData(vozac);
 
@@ -120,7 +120,7 @@ namespace Put387.Database
                 Email = "ema@put387.com",
                 Telefon = "+38762101010",
                 Aktivan = true,
-                Username = "putnik123",
+                Username = "putnik_ema",
                 ulogaId = 3,
                 gradId = 3,
                 Slika = File.ReadAllBytes("img/defaultProfile.png"),
@@ -128,7 +128,7 @@ namespace Put387.Database
             };
 
             putnik.PasswordSalt = Helper.HashGenerator.GenerateSalt();
-            putnik.PasswordHash = Helper.HashGenerator.GenerateHash(putnik.PasswordSalt, "putnik");
+            putnik.PasswordHash = Helper.HashGenerator.GenerateHash(putnik.PasswordSalt, "putnikEma");
 
             modelBuilder.Entity<Korisnik>().HasData(putnik);
 
@@ -140,7 +140,7 @@ namespace Put387.Database
                 Email = "leo@put387.com",
                 Telefon = "+38762101010",
                 Aktivan = true,
-                Username = "vozac1234",
+                Username = "vozac_leo",
                 ulogaId = 2,
                 gradId = 1,
                 Slika = File.ReadAllBytes("img/defaultProfile.png"),
@@ -148,7 +148,7 @@ namespace Put387.Database
             };
 
             vozac2.PasswordSalt = Helper.HashGenerator.GenerateSalt();
-            vozac2.PasswordHash = Helper.HashGenerator.GenerateHash(vozac2.PasswordSalt, "vozac2");
+            vozac2.PasswordHash = Helper.HashGenerator.GenerateHash(vozac2.PasswordSalt, "vozacLeo");
 
             modelBuilder.Entity<Korisnik>().HasData(vozac2);
 
@@ -160,7 +160,7 @@ namespace Put387.Database
                 Email = "rijad@put387.com",
                 Telefon = "+38762101010",
                 Aktivan = true,
-                Username = "putnik1234",
+                Username = "putnik_rijad",
                 ulogaId = 3,
                 gradId = 3,
                 Slika = File.ReadAllBytes("img/defaultProfile.png"),
@@ -168,7 +168,7 @@ namespace Put387.Database
             };
 
             putnik2.PasswordSalt = Helper.HashGenerator.GenerateSalt();
-            putnik2.PasswordHash = Helper.HashGenerator.GenerateHash(putnik2.PasswordSalt, "putnik2");
+            putnik2.PasswordHash = Helper.HashGenerator.GenerateHash(putnik2.PasswordSalt, "putnikRijad");
 
             modelBuilder.Entity<Korisnik>().HasData(putnik2);
 
