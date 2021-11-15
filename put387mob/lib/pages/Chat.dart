@@ -75,7 +75,8 @@ class _ChatState extends State<Chat> {
     getData();
     return Scaffold(
         appBar: AppBar(
-          title: Text('Zahtjevi'),
+          //title: Text('Zahtjevi'),
+          title: Text('Chat'),
           backgroundColor: Color(0xffffd700),
         ),
         drawer: Drawer(
