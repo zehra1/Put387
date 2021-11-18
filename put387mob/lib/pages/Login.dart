@@ -53,6 +53,7 @@ class _LoginState extends State<Login> {
               ),
               TextField(
                 controller: passwordController,
+                obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),),

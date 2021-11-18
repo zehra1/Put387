@@ -11,5 +11,6 @@ namespace Put387.Model.Requests.Zahtjev
         public int BrojMjesta { get; set; }
         public bool Status { get; set; }
         public bool isPaid { get; set; }
+        public bool onlyPay { get; set; }
     }
 }

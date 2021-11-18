@@ -37,9 +37,12 @@ class _ChatState extends State<Chat> {
       };
     }
     var chats = await APIService.Get("Poruka", params);
+    if(chats!=null){
+
     _chatovi = List<DistinctPoruke>.from(
-        chats!.map((model) => DistinctPoruke.fromJson(model)));
+        chats.map((model) => DistinctPoruke.fromJson(model)));
   print("porukee "+_chatovi.toString());
+    }
     return _chatovi;
   }
 
@@ -158,7 +161,7 @@ class _ChatState extends State<Chat> {
                 ? Text("Nema podataka...")
                 : Column(
                     children: [
-                      Text("Vozac zahtjevi"),
+                      Text("Poruke"),
                       ListView.builder(
                           shrinkWrap: true,
                           itemCount: _chatovi[0].distinctUsers.length,

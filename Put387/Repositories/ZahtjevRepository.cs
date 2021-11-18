@@ -33,5 +33,18 @@ namespace Put387.Repositories
                 list = list.Where(x => x.voznja.vozacId == s.VozacId);
             return _mapper.Map<List<Zahtjev>>(list.ToList());
         }
+
+        public override Zahtjev Update(int id, ZahtjevUpsertRequest request)
+        {
+            var zahtjev = _context.Zahtjev.Find(id);
+            if (request.onlyPay)
+            {
+                zahtjev.isPaid = true;
+                _context.Zahtjev.Update(zahtjev);
+                _context.SaveChanges();
+                return _mapper.Map<Zahtjev>(zahtjev);
+            }else
+                return base.Update(id, request);
+        }
     }
 }

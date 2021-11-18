@@ -105,63 +105,66 @@ class _ZahtjeviState extends State<Zahtjevi> {
           backgroundColor: Color(0xffffd700),
         ),
         drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              child: Center(
-                  child: Text(
-                    "Dobro dosli "+
-                APIService.username,
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              )),
-              decoration: BoxDecoration(color: Color(0xffffd700)),
-            ),
-            ListTile(
-              title: Text('Pocetna'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/home');
-              },
-            ),
-            if(APIService.roleId==2)
-            ListTile(
-              title: Text('Poruke'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/poruke');
-              },
-            ),
-            ListTile(
-              title: Text('Zahtjevi'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/zahtjevi');
-              },
-            ),
-            if(APIService.roleId==2)
-            ListTile(
-              title: Text('Dojmovi'),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>KorisnikDojmovi(vozacId:APIService.id)));
-
-              },
-            ), ListTile(
-              title: Text('Profil'),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Profil()));
-
-              },
-            ),
-             ListTile(
-              title: Text('Log out'),
-              onTap: () {
-                APIService.roleId = 0;
-                APIService.username = '';
-                APIService.password = '';
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
-
-              },
-            )
-          ],
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                    child: Text(
+                  "Dobro dosli " + APIService.username,
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                )),
+                decoration: BoxDecoration(color: Color(0xffffd700)),
+              ),
+              ListTile(
+                title: Text('Pocetna'),
+                onTap: () {
+                  Navigator.of(context).pushNamed('/home');
+                },
+              ),
+              if (APIService.roleId == 2)
+                ListTile(
+                  title: Text('Poruke'),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/poruke');
+                  },
+                ),
+              ListTile(
+                title: Text('Zahtjevi'),
+                onTap: () {
+                  Navigator.of(context).pushNamed('/zahtjevi');
+                },
+              ),
+              if (APIService.roleId == 2)
+                ListTile(
+                  title: Text('Dojmovi'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                KorisnikDojmovi(vozacId: APIService.id)));
+                  },
+                ),
+              ListTile(
+                title: Text('Profil'),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Profil()));
+                },
+              ),
+              ListTile(
+                title: Text('Log out'),
+                onTap: () {
+                  APIService.roleId = 0;
+                  APIService.username = '';
+                  APIService.password = '';
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Login()));
+                },
+              )
+            ],
+          ),
         ),
-      ),
         body: APIService.roleId == 2 ? vozacZahtjevi() : putnikZahtjevi());
   }
 
@@ -182,9 +185,10 @@ class _ZahtjeviState extends State<Zahtjevi> {
             padding: EdgeInsets.all(10),
             child: _zahtjevi.length == 0
                 ? Text("Korisnik nema aktivnih zahtjeva...")
-                :Column(
-                  children: [
-                    Expanded(child:ListView.builder(
+                : Column(
+                    children: [
+                      Expanded(
+                          child: ListView.builder(
                               shrinkWrap: true,
                               itemCount: _zahtjevi.length,
                               itemBuilder: (context, index) {
@@ -197,12 +201,12 @@ class _ZahtjeviState extends State<Zahtjevi> {
                                           vertical: 10.0, horizontal: 10.0),
                                       onTap: () {},
                                       title: Padding(
-                                          padding:
-                                              EdgeInsets.symmetric(vertical: 10.0),
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 10.0),
                                           child: Text(
-                                               _zahtjevi[index].polaziste +
-                                              " - " +
-                                              _zahtjevi[index].odrediste,
+                                              _zahtjevi[index].polaziste +
+                                                  " - " +
+                                                  _zahtjevi[index].odrediste,
                                               style: TextStyle(fontSize: 20))),
                                       subtitle: Column(
                                         crossAxisAlignment:
@@ -211,37 +215,37 @@ class _ZahtjeviState extends State<Zahtjevi> {
                                           Text(
                                               "br mjesta: " +
                                                   _zahtjevi[index]
-                                                      .brojMjesta.toString(),
+                                                      .brojMjesta
+                                                      .toString(),
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold)),
-                                          Text(DateUtils.dateOnly(DateTime.parse(
-                                                  _zahtjevi[index].datumKreiranja))
+                                          Text(DateUtils.dateOnly(
+                                                  DateTime.parse(
+                                                      _zahtjevi[index]
+                                                          .datumKreiranja))
                                               .toString()
                                               .substring(0, 16))
                                         ],
                                       ),
-                                     leading: TextButton(
-                                      child: Icon(Icons.check),
-                                      style: TextButton.styleFrom(),
-                                      onPressed: () {
-                                        updateBrojMjesta(_zahtjevi[index]);
-                                      }),
-                                      trailing: Container(
-                                      child: TextButton(
-                                          child: Icon(Icons.close),
+                                      leading: TextButton(
+                                          child: Icon(Icons.check),
                                           style: TextButton.styleFrom(),
-                                          onPressed: () {})),
+                                          onPressed: () {
+                                            updateBrojMjesta(_zahtjevi[index]);
+                                          }),
+                                      trailing: Container(
+                                          child: TextButton(
+                                              child: Icon(Icons.close),
+                                              style: TextButton.styleFrom(),
+                                              onPressed: () {})),
                                     ),
                                   ),
                                 );
                               })),
-                  ],
-                ),
-                    
-                  
+                    ],
+                  ),
           );
-        })
-        );
+        }));
   }
 
   Widget putnikZahtjevi() {
@@ -263,92 +267,128 @@ class _ZahtjeviState extends State<Zahtjevi> {
                 : Column(
                     children: [
                       Text("Putnik zahtjevi"),
-                     Expanded(child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: _zahtjevi.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 2.0, horizontal: 10.0),
-                              child: Card(
-                                child: ListTile(
-                                  contentPadding: EdgeInsets.symmetric(
-                                      vertical: 10.0, horizontal: 10.0),
-                                  onTap: () {},
-                                  title: Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 10.0),
-                                      child: Text(
-                                          _zahtjevi[index].polaziste +
-                                              " - " +
-                                              _zahtjevi[index].odrediste,
-                                          style: TextStyle(fontSize: 20))),
-                                  subtitle: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                          "BrMjesta " +
-                                              _zahtjevi[index]
-                                                  .brojMjesta
-                                                  .toString(),
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      Text(DateUtils.dateOnly(DateTime.parse(
-                                              _zahtjevi[index].datumKreiranja))
-                                          .toString()
-                                          .substring(0, 16))
-                                    ],
-                                  ),
-                                  leading: TextButton(
-                                      child: Icon(Icons.location_city),
-                                      style: TextButton.styleFrom(),
-                                      onPressed: () {}),
-                                  trailing: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        !_zahtjevi[index].isReviewed
-                                            ? !_zahtjevi[index].status
-                                                ? Text("Na cekanju",
-                                                    style: TextStyle(
-                                                        color:
-                                                            Colors.orange[600]))
-                                                : _zahtjevi[index].isPaid ? TextButton(
-                                                    onPressed: () {
-                                                      _navigateAndDisplaySelection(
-                                                          context,
-                                                          _zahtjevi[index]
-                                                              .voznjaId,
-                                                          _zahtjevi[index].id);
-                                                    },
-                                                    child: Text(
-                                                      "Ostavi dojam",style: TextStyle(
-                                                        color:
-                                                            Colors.white),
-                                                    ),
-                                                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.orange[400])),
-                                                  ) : TextButton(onPressed: () async {
-                                                      // Navigator.pushNamed(context, '/cards');
-                                                       Navigator.push(context, MaterialPageRoute(builder: (context)=>ExistingCardsPage(cijena: _zahtjevi[index].cijena,)));
-                                                     ZahtjevEdit req = new ZahtjevEdit(
-        editBrojMjesta: "yes",
-        brojSlobodnihMjesta: 2,
-        onlyPay: true); //zapravo voznja edit
-    var result = await APIService.Put(
-        "Zahtjev",_zahtjevi[index].id, json.encode(req.pay()).toString());
-
-                                                    
-                                                    }, child: Text("Plati "+ _zahtjevi[index].cijena.toString()+"KM"))
-                                            : Text("Zavrseno",
+                      Expanded(
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: _zahtjevi.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 2.0, horizontal: 10.0),
+                                  child: Card(
+                                    child: ListTile(
+                                      contentPadding: EdgeInsets.symmetric(
+                                          vertical: 10.0, horizontal: 10.0),
+                                      onTap: () {},
+                                      title: Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 10.0),
+                                          child: Text(
+                                              _zahtjevi[index].polaziste +
+                                                  " - " +
+                                                  _zahtjevi[index].odrediste,
+                                              style: TextStyle(fontSize: 20))),
+                                      subtitle: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                              "BrMjesta " +
+                                                  _zahtjevi[index]
+                                                      .brojMjesta
+                                                      .toString(),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold)),
+                                          Text(DateUtils.dateOnly(
+                                                  DateTime.parse(
+                                                      _zahtjevi[index]
+                                                          .datumKreiranja))
+                                              .toString()
+                                              .substring(0, 16))
+                                        ],
+                                      ),
+                                      leading: TextButton(
+                                          child: Icon(Icons.location_city),
+                                          style: TextButton.styleFrom(),
+                                          onPressed: () {}),
+                                      trailing: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            !_zahtjevi[index].isReviewed
+                                                ? !_zahtjevi[index].status
+                                                    ? Text("Na cekanju",
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .orange[600]))
+                                                    : _zahtjevi[index].isPaid
+                                                        ? TextButton(
+                                                            onPressed: () {
+                                                              _navigateAndDisplaySelection(
+                                                                  context,
+                                                                  _zahtjevi[
+                                                                          index]
+                                                                      .voznjaId,
+                                                                  _zahtjevi[
+                                                                          index]
+                                                                      .id);
+                                                            },
+                                                            child: Text(
+                                                              "Ostavi dojam",
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .white),
+                                                            ),
+                                                            style: ButtonStyle(
+                                                                backgroundColor:
+                                                                    MaterialStateProperty.all(
+                                                                        Colors.orange[
+                                                                            400])),
+                                                          )
+                                                        : TextButton(
+                                                            onPressed:
+                                                                () async {
+                                                              // Navigator.pushNamed(context, '/cards');
+                                                              Navigator.push(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder: (context) =>
+                                                                          ExistingCardsPage(
+                                                                            cijena:
+                                                                                _zahtjevi[index].cijena,
+                                                                          )));
+                                                              ZahtjevEdit req =
+                                                                  new ZahtjevEdit(
+                                                                      editBrojMjesta:
+                                                                          "yes",
+                                                                      brojSlobodnihMjesta:
+                                                                          2,
+                                                                      onlyPay:
+                                                                          true); //zapravo voznja edit
+                                                              var result = await APIService.Put(
+                                                                  "Zahtjev",
+                                                                  _zahtjevi[
+                                                                          index]
+                                                                      .id,
+                                                                  json
+                                                                      .encode(req
+                                                                          .pay())
+                                                                      .toString());
+                                                            },
+                                                            child: Text("Plati " +
+                                                                _zahtjevi[index]
+                                                                    .cijena
+                                                                    .toString() +
+                                                                "KM"))
+                                                : Text("Zavrseno",
                                                     style: TextStyle(
                                                         color:
                                                             Colors.green[600]))
-                                      ]),
-                                ),
-                              ),
-                            );
-                          })),
+                                          ]),
+                                    ),
+                                  ),
+                                );
+                              })),
                     ],
                   ),
           );

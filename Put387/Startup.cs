@@ -44,6 +44,7 @@ namespace Put387
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
@@ -102,10 +103,10 @@ namespace Put387
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Put387"));
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Put387"));
             app.UseHttpsRedirection();
 
             app.UseRouting();
