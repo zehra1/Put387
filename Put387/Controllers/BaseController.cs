@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Put387.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<TModel, Tsearch> : Controller
