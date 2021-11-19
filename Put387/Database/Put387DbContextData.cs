@@ -223,7 +223,33 @@ namespace Put387.Database
                     {
                         Id = 5,
                         Naziv = "Travnik",
-                    }
+                    },
+                     new Mjesto
+                    {
+                        Id = 6,
+                        Naziv = "Bihac",
+                    },
+                     new Mjesto
+                     {
+                         Id=7,
+                         Naziv="Jablanica"
+                     },
+                     new Mjesto
+                     {
+                         Id=8,
+                         Naziv="Livno"
+                     },
+                     new Mjesto
+                     {
+                         Id=9,
+                         Naziv="Lukavac"
+                     },
+                     new Mjesto
+                     {
+                         Id=10,
+                         Naziv="Gorazde"
+                     }
+
                 }
             );
 
@@ -378,6 +404,81 @@ namespace Put387.Database
                         DatumObjave = new DateTime (2021,07,04),
                         DatumVrijemePolaska = new DateTime (2021,08,17),
                         Napomena = "Bez kucnih ljubimaca",
+                        tipVoznjeId = 2,
+                        vozacId = 4
+                    },
+                    new Voznja
+                    {
+                        Id = 7,
+                        polazisteId = 1,
+                        odredisteId = 4,
+                        Aktivna = true,
+                        BrojMjesta=5,
+                        BrojSlobodnihMjesta = 3,
+                        Cijena = 0,
+                        DatumObjave = new DateTime (2021,07,04),
+                        DatumVrijemePolaska = new DateTime (2021,12,10),
+                        Napomena = "Korisnik nije unio podatke nije unio podatke",
+                        tipVoznjeId = 2,
+                        vozacId = 2
+                    },
+                     new Voznja
+                    {
+                        Id = 8,
+                        polazisteId = 7,
+                        odredisteId = 8,
+                        Aktivna = true,
+                        BrojMjesta=5,
+                        BrojSlobodnihMjesta = 4,
+                        Cijena = 0,
+                        DatumObjave = new DateTime (2021,07,05),
+                        DatumVrijemePolaska = new DateTime (2021,12,10),
+                        Napomena = "Korisnik nije unio podatke",
+                        tipVoznjeId = 2,
+                        vozacId = 4
+                    },
+                     new Voznja
+                    {
+                        Id = 9,
+                        polazisteId = 9,
+                        odredisteId = 10,
+                        Aktivna = true,
+                        BrojMjesta=5,
+                        BrojSlobodnihMjesta = 4,
+                        Cijena = 10,
+                        DatumObjave = new DateTime (2021,08,08),
+                        DatumVrijemePolaska = new DateTime (2021,12,15),
+                        Napomena = "Korisnik nije unio podatke",
+                        tipVoznjeId = 2,
+                        vozacId = 2
+                    },
+                      new Voznja
+                    {
+                        Id = 10,
+                        polazisteId = 1,
+                        odredisteId = 10,
+                        Aktivna = true,
+                        BrojMjesta=5,
+                        BrojSlobodnihMjesta = 1,
+                        Cijena = 0,
+                        DatumObjave = new DateTime (2021,08,08),
+                        DatumVrijemePolaska = new DateTime (2021,12,16),
+                        Napomena = "Zadnja vrata pokvarena",
+                        tipVoznjeId = 1,
+                        vozacId = 2
+                    },
+                      new Voznja
+                    {
+                        Id = 11,
+                        polazisteId = 1,
+                        odredisteId = 8,
+                        Aktivna = true,
+                        BrojMjesta=5,
+                        BrojSlobodnihMjesta = 2,
+                        Cijena = 7,
+                        DatumObjave = new DateTime (2021,08,08),
+                        DatumVrijemePolaska = new DateTime (2022,01,01),
+                        Napomena = "Stajanje kod restorana",
                         tipVoznjeId = 2,
                         vozacId = 4
                     },

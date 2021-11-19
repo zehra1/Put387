@@ -141,5 +141,10 @@ namespace Put387.Win.Medalje
             image.Save(ms, ImageFormat.Jpeg);
             return ms.ToArray();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,25 +48,26 @@ namespace Put387.WinUI.Login
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-186, 265);
+            this.label1.Location = new System.Drawing.Point(-186, 212);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(42, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(53, 234);
+            this.txtUsername.Location = new System.Drawing.Point(53, 187);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(189, 27);
+            this.txtUsername.Size = new System.Drawing.Size(189, 22);
             this.txtUsername.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Gold;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(-224, -45);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 72F);
+            this.label2.Location = new System.Drawing.Point(-224, -36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 159);
             this.label2.TabIndex = 2;
@@ -76,17 +77,19 @@ namespace Put387.WinUI.Login
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Gold;
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(-15, -8);
+            this.groupBox1.Location = new System.Drawing.Point(-15, -6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(419, 151);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(419, 121);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(78, 51);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(78, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 54);
             this.label3.TabIndex = 0;
@@ -95,36 +98,39 @@ namespace Put387.WinUI.Login
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 211);
+            this.label4.Location = new System.Drawing.Point(53, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Username";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(53, 279);
+            this.label5.Location = new System.Drawing.Point(53, 223);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 6;
             this.label5.Text = "Password";
             // 
             // txtPw
             // 
-            this.txtPw.Location = new System.Drawing.Point(53, 302);
+            this.txtPw.Location = new System.Drawing.Point(53, 242);
+            this.txtPw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPw.Name = "txtPw";
             this.txtPw.PasswordChar = '*';
-            this.txtPw.Size = new System.Drawing.Size(189, 27);
+            this.txtPw.Size = new System.Drawing.Size(189, 22);
             this.txtPw.TabIndex = 5;
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Gold;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(104, 370);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnLogin.Location = new System.Drawing.Point(103, 303);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(94, 29);
+            this.btnLogin.Size = new System.Drawing.Size(94, 36);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Sign in";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -137,9 +143,9 @@ namespace Put387.WinUI.Login
             // lblRegistracija
             // 
             this.lblRegistracija.AutoSize = true;
-            this.lblRegistracija.Location = new System.Drawing.Point(157, 332);
+            this.lblRegistracija.Location = new System.Drawing.Point(157, 270);
             this.lblRegistracija.Name = "lblRegistracija";
-            this.lblRegistracija.Size = new System.Drawing.Size(85, 20);
+            this.lblRegistracija.Size = new System.Drawing.Size(83, 17);
             this.lblRegistracija.TabIndex = 8;
             this.lblRegistracija.TabStop = true;
             this.lblRegistracija.Text = "Registruj se";
@@ -147,10 +153,10 @@ namespace Put387.WinUI.Login
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(307, 492);
+            this.ClientSize = new System.Drawing.Size(307, 394);
             this.Controls.Add(this.lblRegistracija);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label5);
@@ -160,6 +166,7 @@ namespace Put387.WinUI.Login
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

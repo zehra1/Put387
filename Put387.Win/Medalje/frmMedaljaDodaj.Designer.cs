@@ -33,6 +33,7 @@ namespace Put387.Win.Medalje
             this.button1 = new System.Windows.Forms.Button();
             this.gbKategorija = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pbIcon = new System.Windows.Forms.PictureBox();
             this.txtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaxBr = new System.Windows.Forms.TextBox();
@@ -42,10 +43,9 @@ namespace Put387.Win.Medalje
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pbIcon = new System.Windows.Forms.PictureBox();
             this.gbKategorija.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -90,6 +90,19 @@ namespace Put387.Win.Medalje
             this.label5.TabIndex = 19;
             this.label5.Text = "Ikonica";
             // 
+            // pbIcon
+            // 
+            this.pbIcon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbIcon.Image = global::Put387.Win.Properties.Resources.medal_1369;
+            this.pbIcon.Location = new System.Drawing.Point(403, 98);
+            this.pbIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.pbIcon.Name = "pbIcon";
+            this.pbIcon.Size = new System.Drawing.Size(160, 132);
+            this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIcon.TabIndex = 18;
+            this.pbIcon.TabStop = false;
+            this.pbIcon.Click += new System.EventHandler(this.pbIcon_Click);
+            // 
             // txtBox
             // 
             this.txtBox.Location = new System.Drawing.Point(23, 183);
@@ -123,9 +136,10 @@ namespace Put387.Win.Medalje
             this.label3.Location = new System.Drawing.Point(208, 98);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 17);
+            this.label3.Size = new System.Drawing.Size(150, 17);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Minimalan broj voznji";
+            this.label3.Text = "Maksimalan broj voznji";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -167,19 +181,6 @@ namespace Put387.Win.Medalje
             // 
             this.err.ContainerControl = this;
             // 
-            // pbIcon
-            // 
-            this.pbIcon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbIcon.Image = global::Put387.Win.Properties.Resources.medal_1369;
-            this.pbIcon.Location = new System.Drawing.Point(403, 98);
-            this.pbIcon.Margin = new System.Windows.Forms.Padding(4);
-            this.pbIcon.Name = "pbIcon";
-            this.pbIcon.Size = new System.Drawing.Size(160, 132);
-            this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIcon.TabIndex = 18;
-            this.pbIcon.TabStop = false;
-            this.pbIcon.Click += new System.EventHandler(this.pbIcon_Click);
-            // 
             // frmMedaljaDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -195,8 +196,8 @@ namespace Put387.Win.Medalje
             this.Load += new System.EventHandler(this.frmMedaljaDodaj_Load);
             this.gbKategorija.ResumeLayout(false);
             this.gbKategorija.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
 
         }
